@@ -11,17 +11,17 @@ const Calculator = () => {
 
   return (
     <div className="grid grid-cols-6 gap-4 size-full max-w-[1400px] max-h-[1000px] items-center text-center text-black sm:items-start sm:text-left">
-      <Card className="col-span-4 h-full p-4 flex flex-col">
+      <Card className="col-span-6 xl:col-span-4 h-full p-4 flex flex-col">
         <span className="pt-2 mb-4 text-xl font-bold">메뉴</span>
-        <div className="grid grid-cols-3 grid-rows-3 h-full gap-4">
+        <div className="grid grid-cols-1 xl:grid-cols-3 xl:grid-rows-3 h-full gap-4">
           {menus.map((el) => {
             return <MenuItem key={el.idx} data={el} />;
           })}
         </div>
       </Card>
-      <Card className="col-span-2 h-full p-4 overflow-y-auto flex flex-col justify-between relative">
+      <Card className="col-span-6 xl:col-span-2 h-full p-4 xl:overflow-y-auto flex flex-col justify-between relative">
         <span className="pt-2 mb-4 text-xl font-bold">주문</span>
-        <div className="flex flex-col gap-y-2 h-[calc(100%-64px)] overflow-y-auto pb-8">
+        <div className="flex flex-col gap-y-2 h-full xl:h-[calc(100%-64px)] xl:overflow-y-auto pb-8">
           {menus
             .filter((el) => el.count > 0)
             .map((item) => {
